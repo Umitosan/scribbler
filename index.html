@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="scripts/helpers.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script>
+    <script type="text/javascript" src="scripts/box.js"></script>
+    <script type="text/javascript" src="scripts/linegroup.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"  type="text/css" >
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Scribbler</title>
+  </head>
+  <body>
+
+    <div class="main-container">
+
+      <div class="title-container">
+        <span id="title">The Scribbler</span>
+      </div>
+
+      <div class="buttons-container">
+        <button id="start-btn" type="button" name="start">START</button>
+        <button id="pause-btn" type="button" name="pause">PAUSE</button>
+        <button id="reset-btn" type="button" name="reset">RESET</button>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="canvas" tabindex='1' width="1000" height="1000"></canvas>
+      </div>
+
+    </div>
+  <footer>
+    <div class="social-container">
+      <a href="https://github.com/Umitosan/scribbler">
+        <img id="git-img" border="0" src="giticon.png" alt="github-icon">
+      </a>
+    </div>
+  </footer>
+</html>

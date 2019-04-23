@@ -1,0 +1,84 @@
+
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Shrikhand', cursive
+*/
+
+body {
+  margin: 0px 0px;
+  background-color: rgba(102,150,142,1);
+}
+
+.main-container {
+  width: 1000px;
+  height: 100%;
+  margin: 20px auto 0px auto;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 6px;
+}
+
+.title-container {
+  text-align: center;
+  margin: 40px auto 20px auto;
+}
+#title {
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+
+.buttons-container {
+  width: 310px;
+  height: auto;
+  margin: 0px auto;
+  /* outline-color: green;
+  outline-style: solid;
+  outline-width: 1px; */
+}
+.buttons-container button {
+  font-weight: 600;
+  color: black;
+  width: 100px;
+  height: 54px;
+  background-color: lightgreen;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: green;
+}
+.buttons-container button:hover {
+  background-color: pink;
+  border-color: pink;
+}
+
+.canvas-container {
+  margin: 20px auto 50px auto;
+  width: 1002px;
+  height: 1002px;
+  /* outline-color: red;
+  outline-style: solid;
+  outline-width: 1px; */
+}
+#canvas {
+  margin: 0px 0px;
+  background-color: white;
+  /* outline-color: red;
+  outline-style: solid;
+  outline-width: 1px; */
+}
+
+
+footer {
+  margin: 20px auto auto auto;
+}
+.social-container {
+  width: 70px;
+  height: 70px;
+  margin: 0px auto;
+}
+#git-img {
+  height: 70px;
+  width: 70px;
+}
