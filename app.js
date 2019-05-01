@@ -333,6 +333,9 @@ $(document).ready(function() {
 
   $('#start-btn').click(function() {
     console.log("start button clicked");
+    myGame.updateSpeed = parseInt( $('#speed-slider-1')[0].value );
+    myGame.lineGroup1.maxLineLen = parseInt( $('#number-input-1')[0].value );
+    myGame.lineGroup1.lineW = parseInt( $('#number-input-2')[0].value );
     clearCanvas(ctx);
     if (myGame.mode === 'draw') {
       myGame.mode = 'sim';
@@ -366,58 +369,79 @@ $(document).ready(function() {
     }
   });
 
-// INPUT - SLIDER 1
-$('#speed-slider-1').mousedown(function(e1) {
-  leftMouseDown = true;
-}).mouseup(function(e2) {
-  leftMouseDown = false;
-});
-$('#speed-input-1').on('change', function(e) {
-  let v = this.value;
-  $('#speed-slider-1').prop("value", v);
-  if (myGame !== undefined) {
-    myGame.updateSpeed = v;
-    console.log('myGame.updateSpeed = ', myGame.updateSpeed);
-
-  }
-});
-
-$('#speed-slider-1').mousemove(function(e) {
-  if (leftMouseDown === true) {
-    let v = this.value;
+  // number of segements drawn each update()
+  $('#speed-slider-1').mousedown(function(e1) {
+    leftMouseDown = true;
+    let v = parseInt( this.value );
+    $('#speed-slider-1').prop("value", v);
     $('#speed-input-1').prop("value", v);
     if (myGame !== undefined) {
       myGame.updateSpeed = v;
-      console.log('myGame.updateSpeed = ', myGame.updateSpeed);
     }
-  }
-});
-
-// INPUT - SLIDER 2
-$('#speed-slider-2').mousedown(function(e1) {
-  leftMouseDown = true;
-}).mouseup(function(e2) {
-  leftMouseDown = false;
-});
-$('#speed-input-2').on('change', function(e) {
-  let v = this.value;
-  $('#speed-slider-2').prop("value", v);
-  if (myGame !== undefined) {
-    // do stuff
-    console.log('slide2 = ', v);
-  }
-});
-
-$('#speed-slider-2').mousemove(function(e) {
-  if (leftMouseDown === true) {
-    let v = this.value;
-    $('#speed-input-2').prop("value", v);
+  }).mouseup(function(e2) {
+    leftMouseDown = false;
+    let v = parseInt( this.value );
+    $('#speed-slider-1').prop("value", v);
+    $('#speed-input-1').prop("value", v);
     if (myGame !== undefined) {
-      // do stuff
-      console.log('slide2 = ', v);
+      myGame.updateSpeed = v;
     }
-  }
-});
+  });
+  $('#speed-slider-1').mousemove(function(e) {
+    if (leftMouseDown === true) {
+      let v = parseInt( this.value );
+      $('#speed-input-1').prop("value", v);
+      $('#speed-input-1').prop("value", v);
+      if (myGame !== undefined) {
+        myGame.updateSpeed = v;
+      }
+    }
+  });
+  $('#speed-input-1').on('change', function(e) {
+    let v = parseInt( this.value );
+    if ( (v <= 300) && (v > 0) ) {
+      $('#speed-slider-1').prop("value", v);
+      if (myGame !== undefined) {
+        myGame.updateSpeed = v;
+      }
+    } else {
+      console.log('bad input');
+      $('#speed-slider-1').prop("value", 100);
+      $('#speed-input-1').prop("value", 100);
+    }
+  });
+
+
+  // line width
+  $('#number-input-1').on('change', function(e) {
+    let v = parseInt( this.value );
+    console.log('v = ', v);
+    if ( (v >= 1) && (v <= 50) ) {
+      if (myGame !== undefined) {
+        myGame.lineGroup1.maxLineLen = v;
+      }
+    } else {
+      console.log('bad input');
+      $('#number-input-1').prop("value", 1);
+    }
+  });
+
+
+  // line width
+  $('#number-input-2').on('change', function(e) {
+    let v = parseInt( this.value );
+    console.log('v = ', v);
+    if ( (v >= 0.1) && (v <= 10) ) {
+      if (myGame !== undefined) {
+        myGame.lineGroup1.lineW = v;
+      }
+    } else {
+      console.log('bad input');
+      $('#number-input-2').prop("value", 1);
+    }
+  });
+
+
 
 
 });

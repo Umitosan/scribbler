@@ -7,6 +7,7 @@ function LineGroup(x,y) {
   this.headX = canW/2;
   this.headY = canH/2;
   this.lineW = 2;
+  this.maxLineLen = 6;
   this.lineCol = randColor('rgba');
   this.boxCol = randColor('rgba');
   this.colorTimer = 1800;
@@ -15,26 +16,21 @@ function LineGroup(x,y) {
   this.init = function() {
     this.getNewHeadCoords();
     this.colorTimerLastUpdate = performance.now();
-    // console.log('this = ', this);
   };
 
   this.draw = function() {
-    // ctx.save();
-    // ctx.translate(this.x1,this.y1);
     ctx.beginPath();
     ctx.lineWidth = this.lineW;
     ctx.strokeStyle = this.lineCol;
-    // ctx.fillStyle = this.boxCol;
+    ctx.lineJoin = "round";
     ctx.moveTo(this.x1,this.y1);
     ctx.lineTo(this.headX,this.headY);
-    // ctx.fillRect(this.x1-2,this.y1-2,4,4);
     ctx.stroke();
-    // ctx.restore();
   };
 
   this.getNewHeadCoords = function() {
-    let xVec = (randSign() * getRandomIntInclusive(0,6));
-    let yVec = (randSign() * getRandomIntInclusive(0,6));
+    let xVec = (randSign() * getRandomIntInclusive(0,this.maxLineLen));
+    let yVec = (randSign() * getRandomIntInclusive(0,this.maxLineLen));
     let x = this.headX;
     let y = this.headY;
 

@@ -107,7 +107,7 @@ footer {
   margin-left: 5px;
   margin-right: 10px;
   border-style: none;
-  width: 60px;
+  width: 50px;
   height: 26px;
   font-size: 16px;
 }
@@ -146,8 +146,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     background: #ccc;
 }
 
-.number-input-container {
-  width: 250px;
+.number-input-container-1 {
+  width: 300px;
   height: 30px;
   display: flex;
   margin: 10px auto 0px auto;
@@ -156,6 +156,17 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   outline-width: 1px; */
 }
 .number-input {
-  margin: 0px 20px 0px auto;
+  width: 50px;
+  margin: 0px 10px 0px auto;
   font-size: 16px
+}
+
+.number-input-container-2 {
+  width: 250px;
+  height: 30px;
+  display: flex;
+  margin: 10px auto 0px auto;
+  /* outline-color: blue;
+  outline-style: solid;
+  outline-width: 1px; */
 }

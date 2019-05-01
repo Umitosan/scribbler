@@ -13,10 +13,10 @@ function Game(updateDur) {
   this.pausedTxt = undefined;
   this.mode = 'init';
   this.lineGroup1 = undefined;
-  this.updateSpeed = 100;
+  this.updateSpeed = 50;
 
   this.init = function() {
-    this.bg.src = 'bg1.png';
+    this.bg.src = 'bg2.jpg';
     this.boxy = new Box(20,20,myColors.red,10,1);
     this.boxy.init();
     this.lineGroup1 = new LineGroup(canW/2,canH/2);
