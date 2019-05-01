@@ -82,3 +82,80 @@ footer {
   height: 70px;
   width: 70px;
 }
+
+
+
+
+/* INPUT buttons */
+
+.slide-container {
+  width: 650px;
+  display: flex;
+  margin: 10px auto 0px auto;
+  /* outline-color: red;
+  outline-style: solid;
+  outline-width: 1px; */
+}
+.input-label {
+  font-size: 20px;
+}
+.speed-slider {
+  margin: 0px 10px 0px 10px;
+  width: 230px;
+}
+.speed-input {
+  margin-left: 5px;
+  margin-right: 10px;
+  border-style: none;
+  width: 60px;
+  height: 26px;
+  font-size: 16px;
+}
+input[type=range]{
+    -webkit-appearance: none;
+    background-color: rgba(102,150,142,1);
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: darkGrey;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: black;
+    margin-top: -5px;
+}
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: black;
+    margin-top: -5px;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+.number-input-container {
+  width: 250px;
+  height: 30px;
+  display: flex;
+  margin: 10px auto 0px auto;
+  /* outline-color: red;
+  outline-style: solid;
+  outline-width: 1px; */
+}
+.number-input {
+  margin: 0px 20px 0px auto;
+  font-size: 16px
+}

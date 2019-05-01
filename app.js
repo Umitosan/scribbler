@@ -366,5 +366,58 @@ $(document).ready(function() {
     }
   });
 
+// INPUT - SLIDER 1
+$('#speed-slider-1').mousedown(function(e1) {
+  leftMouseDown = true;
+}).mouseup(function(e2) {
+  leftMouseDown = false;
+});
+$('#speed-input-1').on('change', function(e) {
+  let v = this.value;
+  $('#speed-slider-1').prop("value", v);
+  if (myGame !== undefined) {
+    myGame.updateSpeed = v;
+    console.log('myGame.updateSpeed = ', myGame.updateSpeed);
+
+  }
+});
+
+$('#speed-slider-1').mousemove(function(e) {
+  if (leftMouseDown === true) {
+    let v = this.value;
+    $('#speed-input-1').prop("value", v);
+    if (myGame !== undefined) {
+      myGame.updateSpeed = v;
+      console.log('myGame.updateSpeed = ', myGame.updateSpeed);
+    }
+  }
+});
+
+// INPUT - SLIDER 2
+$('#speed-slider-2').mousedown(function(e1) {
+  leftMouseDown = true;
+}).mouseup(function(e2) {
+  leftMouseDown = false;
+});
+$('#speed-input-2').on('change', function(e) {
+  let v = this.value;
+  $('#speed-slider-2').prop("value", v);
+  if (myGame !== undefined) {
+    // do stuff
+    console.log('slide2 = ', v);
+  }
+});
+
+$('#speed-slider-2').mousemove(function(e) {
+  if (leftMouseDown === true) {
+    let v = this.value;
+    $('#speed-input-2').prop("value", v);
+    if (myGame !== undefined) {
+      // do stuff
+      console.log('slide2 = ', v);
+    }
+  }
+});
+
 
 });

@@ -11,9 +11,9 @@ function Box(x,y,color,size,vel) {
   this.lastColorTime = undefined;
   this.colorChangeTimer = 2000;
   this.leftBound = 0;
-  this.rightBound = 182;
+  this.rightBound = 120;
   this.upBound = 0;
-  this.downBound = 158;
+  this.downBound = 100;
 
   this.init = function() {
     this.lastColorTime = performance.now();

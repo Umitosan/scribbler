@@ -13,6 +13,7 @@ function Game(updateDur) {
   this.pausedTxt = undefined;
   this.mode = 'init';
   this.lineGroup1 = undefined;
+  this.updateSpeed = 100;
 
   this.init = function() {
     this.bg.src = 'bg1.png';
@@ -56,7 +57,7 @@ function Game(updateDur) {
                 //   console.log('timesToUpdate = ', timesToUpdate);
                 // }
                 // general update area
-                for (let k = 0; k < 300; k++) {
+                for (let k = 0; k < this.updateSpeed; k++) {
                   this.lineGroup1.update();
                 }
                 // console.log('performance.now() - this.lineGroup1.colorTimerLastUpdate) = ', ( performance.now() - this.lineGroup1.colorTimerLastUpdate) );
